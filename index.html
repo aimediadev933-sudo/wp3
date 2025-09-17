@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WP3 - Campus Network Security & Training</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F1F5F8;
+            color: #1D1D1B;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #017CA5, #1F3F56);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .stats-section {
+            background: white;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: #5DBEDB;
+            color: white;
+            border-radius: 8px;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .projects-section {
+            margin: 2rem auto;
+        }
+
+        .section-title {
+            color: #017CA5;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .call-group {
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .call-header {
+            background: #017CA5;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .project-card {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-card:last-child {
+            border-bottom: none;
+        }
+
+        .project-card:hover {
+            background-color: #F8FAFC;
+        }
+
+        .project-title {
+            color: #017CA5;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            color: #1D1D1B;
+            margin-bottom: 1rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            background: #5DBEDB;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: #017CA5;
+        }
+
+        .footer {
+            background: #1F3F56;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .project-card {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>WP3 Project Portal</h1>
+            <p>Campus Network Security & Training Initiative</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">11</span>
+                    <span class="stat-label">Total Projects</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Call Phases</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Countries</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Network Security Focus</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="projects-section">
+            <h2 class="section-title">Project Calls & Initiatives</h2>
+
+            <!-- 1st Call -->
+            <div class="call-group">
+                <div class="call-header">1st Call Projects</div>
+                <div class="project-card">
+                    <div class="project-title">Campus Network Workshop</div>
+                    <div class="project-description">Campus Network Security Workshop - Completed foundational training program</div>
+                    <a href="https://c1wp3prj06.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <!-- 2nd Call -->
+            <div class="call-group">
+                <div class="call-header">2nd Call Projects</div>
+                <div class="project-card">
+                    <div class="project-title">CSIRT Capacity Building in Asia</div>
+                    <div class="project-description">Providing Security Training and Facilitating Creation of a Trusted Information Sharing Platform</div>
+                    <a href="https://c2wp3prj19.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">Master of Cybersecurity Program</div>
+                    <div class="project-description">Distance Master Program in Cybersecurity - Sri Lanka Initiative</div>
+                    <a href="https://c2wp3prj20.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <!-- 3rd Call -->
+            <div class="call-group">
+                <div class="call-header">3rd Call Projects</div>
+                <div class="project-card">
+                    <div class="project-title">Asi@Connect Female Network Engineer Program</div>
+                    <div class="project-description">Capacity development program for NREN TechGirl and Future IT Girl</div>
+                    <a href="https://c3wp3prj36.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">IPv6 Deployment Resources</div>
+                    <div class="project-description">Uplifting Resources to Deploy IPv6, DNS/DNSSEC, identity access management and network monitoring</div>
+                    <a href="https://c3wp3prj37.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">Local Network Development</div>
+                    <div class="project-description">Develop local network and system infrastructure - Bhutan Initiative</div>
+                    <a href="https://c3wp3prj38.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">Campus Network Security Training</div>
+                    <div class="project-description">On-Campus Network Security and Monitoring Training for IT Technicians in Afghanistan</div>
+                    <a href="https://c3wp3prj39.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <!-- 4th Call -->
+            <div class="call-group">
+                <div class="call-header">4th Call Projects</div>
+                <div class="project-card">
+                    <div class="project-title">Network Infrastructure Upgrade</div>
+                    <div class="project-description">Comprehensive network infrastructure enhancement and modernization</div>
+                    <a href="https://c4wp3prj56.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">Women Universities Security Training</div>
+                    <div class="project-description">Network Security Training and Workshops across Selected Women Universities in Pakistan</div>
+                    <a href="https://c4wp3prj57.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <!-- 5th Call -->
+            <div class="call-group">
+                <div class="call-header">5th Call Projects</div>
+                <div class="project-card">
+                    <div class="project-title">AfgREN + ErdemNet Next</div>
+                    <div class="project-description">Advanced network infrastructure development for Afghanistan and regional connectivity</div>
+                    <a href="https://c5wp3prj71.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">Female Network Engineer Program Phase-2</div>
+                    <div class="project-description">Strengthen the Asi@Connect Female Network Engineer: A capacity development program (Phase-2)</div>
+                    <a href="https://c5wp3prj72.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2024 WP3 Campus Network Security Initiative. Empowering secure networks across Asia.</p>
+        </div>
+    </div>
+</body>
+</html>
