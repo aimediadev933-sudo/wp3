@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WP3 - Campus Network Security & Training</title>
+    <title>WP3 - Campus Network Security & Training - Asi@Connect</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
     <style>
         * {
             margin: 0;
@@ -18,7 +22,130 @@
             line-height: 1.6;
         }
 
-        .header {
+        /* ===== SITE HEADER NAVIGATION ===== */
+        .site-header {
+            background: linear-gradient(135deg, #003399 0%, #0066cc 100%);
+            color: white;
+            padding: 1rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23ff6b9d;stop-opacity:0.1" /><stop offset="50%" style="stop-color:%23ffa726;stop-opacity:0.1" /><stop offset="100%" style="stop-color:%237b1fa2;stop-opacity:0.1" /></linearGradient></defs><circle cx="100" cy="100" r="80" fill="url(%23grad1)"/><circle cx="300" cy="150" r="60" fill="url(%23grad1)"/><circle cx="800" cy="80" r="100" fill="url(%23grad1)"/><circle cx="1000" cy="200" r="70" fill="url(%23grad1)"/></svg>') no-repeat;
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        nav {
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        .eu-logo { height: 40px; }
+        .asiaconnect-logo { height: 50px; }
+        .tein-logo-img { height: 45px; }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            background: rgba(255, 167, 38, 0.8);
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            display: block;
+        }
+
+        .nav-menu li a:hover {
+            background: rgba(255, 167, 38, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ===== PAGE HEADER ===== */
+        .page-header {
             background: linear-gradient(135deg, #017CA5, #1F3F56);
             color: white;
             padding: 2rem 0;
@@ -26,13 +153,13 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .header h1 {
+        .page-header h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
             font-weight: 700;
         }
 
-        .header p {
+        .page-header p {
             font-size: 1.2rem;
             opacity: 0.9;
         }
@@ -160,8 +287,79 @@
             margin-top: 3rem;
         }
 
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1024px) {
+            .nav-menu {
+                gap: 20px;
+            }
+            
+            .nav-menu li a {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+        }
+
         @media (max-width: 768px) {
-            .header h1 {
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .logo-section {
+                justify-content: center;
+                gap: 15px;
+                padding: 8px 15px;
+                width: 100%;
+            }
+
+            .logo-img { height: 40px; }
+            .eu-logo { height: 35px; }
+            .asiaconnect-logo { height: 40px; }
+            .tein-logo-img { height: 38px; }
+
+            .menu-toggle {
+                display: flex;
+                position: absolute;
+                top: 15px;
+                right: 20px;
+            }
+
+            .nav-menu {
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                flex-direction: column;
+                gap: 0;
+                transition: max-height 0.3s ease;
+            }
+
+            .nav-menu.active {
+                max-height: 500px;
+            }
+
+            .nav-menu li {
+                width: 100%;
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+
+            .nav-menu.active li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .nav-menu li a {
+                text-align: center;
+                width: 100%;
+                margin-bottom: 10px;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .page-header h1 {
                 font-size: 2rem;
             }
             
@@ -178,10 +376,58 @@
                 padding: 1rem;
             }
         }
+
+        @media (max-width: 480px) {
+            .logo-section {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
+    <!-- Site Header Navigation -->
+    <header class="site-header">
+        <div class="header-bg"></div>
+        <nav>
+            <div class="nav-container">
+                <div class="logo-section">
+                    <img src="images/logos/eu-logo.png" alt="European Union" class="logo-img eu-logo">
+                    <img src="images/logos/asia-connect-logo.png" alt="Asi@Connect" class="logo-img asiaconnect-logo">
+                    <img src="images/logos/tein-logo.png" alt="TEIN CC" class="logo-img tein-logo-img">
+                </div>
+                
+                <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="http://about.asiaconnect.online/" target="_blank" rel="noopener noreferrer">About</a></li>
+                    <li><a href="https://wp2.asiaconnect.online/" target="_blank" rel="noopener noreferrer">WP2</a></li>
+                    <li><a href="http://wp3.asiaconnect.online/" target="_blank" rel="noopener noreferrer">WP3</a></li>
+                    <li><a href="http://wp4.asiaconnect.online/" target="_blank" rel="noopener noreferrer">WP4</a></li>
+                    <li><a href="https://wp5.asiaconnect.online/" target="_blank" rel="noopener noreferrer">WP5</a></li>
+                    <li><a href="http://wp6.asiaconnect.online/" target="_blank" rel="noopener noreferrer">WP6</a></li>
+                    <li><a href="https://targetcall.asiaconnect.online/" target="_blank" rel="noopener noreferrer">Targeted Call</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
         <div class="container">
             <h1>WP3 Project Portal</h1>
             <p>Campus Network Security & Training Initiative</p>
@@ -219,7 +465,7 @@
                 <div class="project-card">
                     <div class="project-title">Campus Network Workshop</div>
                     <div class="project-description">Campus Network Security Workshop - Completed foundational training program</div>
-                    <a href="https://c1wp3prj06.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                    <a href="https://c1wp3prj06.asiaconnect.online" class="project-link">View Project</a>
                 </div>
             </div>
 
@@ -229,12 +475,12 @@
                 <div class="project-card">
                     <div class="project-title">CSIRT Capacity Building in Asia</div>
                     <div class="project-description">Providing Security Training and Facilitating Creation of a Trusted Information Sharing Platform</div>
-                    <a href="https://c2wp3prj19.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                    <a href="https://c2wp3prj19.asiaconnect.online" class="project-link">View Project</a>
                 </div>
                 <div class="project-card">
                     <div class="project-title">Master of Cybersecurity Program</div>
                     <div class="project-description">Distance Master Program in Cybersecurity - Sri Lanka Initiative</div>
-                    <a href="https://c2wp3prj20.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                    <a href="https://c2wp3prj20.asiaconnect.online" class="project-link">View Project</a>
                 </div>
             </div>
 
@@ -244,22 +490,22 @@
                 <div class="project-card">
                     <div class="project-title">Asi@Connect Female Network Engineer Program</div>
                     <div class="project-description">Capacity development program for NREN TechGirl and Future IT Girl</div>
-                    <a href="https://c3wp3prj36.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                    <a href="https://c3wp3prj36.asiaconnect.online" class="project-link">View Project</a>
                 </div>
                 <div class="project-card">
                     <div class="project-title">IPv6 Deployment Resources</div>
                     <div class="project-description">Uplifting Resources to Deploy IPv6, DNS/DNSSEC, identity access management and network monitoring</div>
-                    <a href="https://c3wp3prj37.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                    <a href="https://c3wp3prj37.asiaconnect.online" class="project-link">View Project</a>
                 </div>
                 <div class="project-card">
                     <div class="project-title">Local Network Development</div>
                     <div class="project-description">Develop local network and system infrastructure - Bhutan Initiative</div>
-                    <a href="https://c3wp3prj38.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                    <a href="https://c3wp3prj38.asiaconnect.online" class="project-link">View Project</a>
                 </div>
                 <div class="project-card">
                     <div class="project-title">Campus Network Security Training</div>
                     <div class="project-description">On-Campus Network Security and Monitoring Training for IT Technicians in Afghanistan</div>
-                    <a href="https://c3wp3prj39.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                    <a href="https://c3wp3prj39.asiaconnect.online" class="project-link">View Project</a>
                 </div>
             </div>
 
@@ -269,12 +515,12 @@
                 <div class="project-card">
                     <div class="project-title">Network Infrastructure Upgrade</div>
                     <div class="project-description">Comprehensive network infrastructure enhancement and modernization</div>
-                    <a href="https://c4wp3prj56.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                    <a href="https://c4wp3prj56.asiaconnect.online" class="project-link">View Project</a>
                 </div>
                 <div class="project-card">
                     <div class="project-title">Women Universities Security Training</div>
                     <div class="project-description">Network Security Training and Workshops across Selected Women Universities in Pakistan</div>
-                    <a href="https://c4wp3prj57.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                    <a href="https://c4wp3prj57.asiaconnect.online" class="project-link">View Project</a>
                 </div>
             </div>
 
@@ -284,12 +530,12 @@
                 <div class="project-card">
                     <div class="project-title">AfgREN + ErdemNet Next</div>
                     <div class="project-description">Advanced network infrastructure development for Afghanistan and regional connectivity</div>
-                    <a href="https://c5wp3prj71.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                    <a href="https://c5wp3prj71.asiaconnect.online" class="project-link">View Project</a>
                 </div>
                 <div class="project-card">
                     <div class="project-title">Female Network Engineer Program Phase-2</div>
                     <div class="project-description">Strengthen the Asi@Connect Female Network Engineer: A capacity development program (Phase-2)</div>
-                    <a href="https://c5wp3prj72.asiaconnect.online" class="project-link" target="_blank">View Project</a>
+                    <a href="https://c5wp3prj72.asiaconnect.online" class="project-link">View Project</a>
                 </div>
             </div>
         </div>
@@ -300,5 +546,47 @@
             <p>&copy; 2024 WP3 Campus Network Security Initiative. Empowering secure networks across Asia.</p>
         </div>
     </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                
+                const isExpanded = this.classList.contains('active');
+                this.setAttribute('aria-expanded', isExpanded);
+            });
+
+            document.addEventListener('click', function(event) {
+                const isClickInside = menuToggle.contains(event.target) || navMenu.contains(event.target);
+                
+                if (!isClickInside && navMenu.classList.contains('active')) {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
